@@ -24,9 +24,10 @@ class ViewController: UIViewController {
     }
 
     @IBAction func choiseMade(_ sender: UIButton) {
-        
+        storyLogic.checkDestination(for: sender.tag)
+        updateUI()
     }
-    
+    //Funcion for updating UI elements
     func updateUI() {
         textLabel.text = storyLogic.getStoryText()
         buttonChoise1.setTitle(storyLogic.getButtonChoiseText1(), for: .normal)

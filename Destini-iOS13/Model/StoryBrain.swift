@@ -43,12 +43,20 @@ struct StoryBrain {
     func getStoryText() -> String {
         return story[storyTell].title
     }
-    
+    //Method to set button label for buttonChoise1
     func getButtonChoiseText1() -> String {
         return story[storyTell].choise1
     }
-    
+    //Method to set button label for buttonChoise2
     func getButtonChoiseText2() -> String {
         return story[storyTell].choise2
+    }
+    
+    mutating func checkDestination(for buttonTag: Int) {
+        if buttonTag == 0 {
+            storyTell = story[storyTell].choice1Destination
+        } else {
+            storyTell = story[storyTell].choice2Destination
+        }
     }
 }
